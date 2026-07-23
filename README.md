@@ -273,25 +273,29 @@ streamlit run app.py
 
 ## Home
 
-> Add Screenshot Here
+> <img width="1917" height="1076" alt="image" src="https://github.com/user-attachments/assets/9655c683-f8ee-4306-9756-56d4565e492b" />
+
 
 ---
 
 ## Document Upload
 
-> Add Screenshot Here
+> <img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/504a631c-0f9b-424d-b34b-c1e0598a522e" />
+
 
 ---
 
 ## Chat Interface
 
-> Add Screenshot Here
+> <img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/020bb513-5272-43b7-bd42-e0d8292c0068" />
+
 
 ---
 
 ## Citation Display
 
-> Add Screenshot Here
+><img width="1916" height="1078" alt="image" src="https://github.com/user-attachments/assets/d824ce66-17f0-4e27-b238-54805d0a273c" />
+
 
 ---
 
