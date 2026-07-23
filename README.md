@@ -1,59 +1,370 @@
-# Advanced RAG System
+<div align="center">
 
-## Completion phase
+# 🚀 Advanced Hybrid RAG System
 
-The Streamlit application includes hybrid FAISS and BM25 retrieval with reciprocal-rank fusion, cross-encoder reranking, local multi-query expansion, context compression, short-term conversation memory, streamed answer display, multiple LLM providers, cited sources, and JSON chat export.
+### Production-Inspired Retrieval-Augmented Generation (RAG) System
 
-An educational, portfolio-ready Retrieval-Augmented Generation application built with Streamlit. The project grows from simple local document ingestion into hybrid retrieval (dense search + BM25), reciprocal-rank fusion, reranking, conversational memory, and cited answers.
+Hybrid Search • BM25 • Dense Retrieval • Reciprocal Rank Fusion • Cross-Encoder Reranking • Multi-LLM Support • Conversation Memory • Streamlit
 
-## Current status
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red.svg)
+![FAISS](https://img.shields.io/badge/FAISS-Vector%20DB-green.svg)
+![BM25](https://img.shields.io/badge/Retrieval-BM25-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
 
-**Phase 5 — Basic cited RAG is complete.** After you build the FAISS index, ask a question in chat. The app retrieves relevant chunks, instructs the selected LLM to answer from those sources only, and displays the exact chunks used.
+</div>
 
-## Supported roadmap
+---
 
-1. Parse PDF, DOCX, TXT, and CSV documents.
-2. Split documents into metadata-rich chunks.
-3. Build embeddings and a persistent FAISS index.
-4. Add basic cited RAG responses. ✅
-5. Add BM25, reciprocal-rank fusion, and a cross-encoder reranker.
-6. Add conversational memory, streaming, LLM provider selection, and chat export.
+# 📌 Overview
 
-## Setup
+**Advanced Hybrid RAG System** is a production-inspired Retrieval-Augmented Generation application that allows users to upload documents, build a searchable knowledge base, and chat with them using modern LLMs.
 
-Use Python 3.10 or newer.
+Unlike basic RAG implementations, this project combines **semantic vector search**, **keyword retrieval**, **Reciprocal Rank Fusion**, and **Cross-Encoder Reranking** to significantly improve retrieval quality and reduce hallucinations.
+
+The application supports multiple LLM providers including **OpenAI**, **Google Gemini**, and **Ollama**, while providing **citation-backed responses**, **conversation memory**, and an interactive **Streamlit** interface.
+
+---
+
+# ✨ Features
+
+## 📄 Multi-format Document Ingestion
+
+- PDF
+- DOCX
+- TXT
+- CSV
+
+---
+
+## 🧠 Advanced Retrieval Pipeline
+
+- Dense Retrieval (FAISS)
+- BM25 Sparse Retrieval
+- Hybrid Search
+- Reciprocal Rank Fusion (RRF)
+- Cross-Encoder Re-ranking
+- Metadata-aware retrieval
+
+---
+
+## 🤖 Multiple LLM Providers
+
+- OpenAI
+- Google Gemini
+- Ollama (Local Models)
+
+---
+
+## 💬 Conversational AI
+
+- Context-aware chat
+- Short-term memory
+- Streaming responses
+- Citation-backed answers
+- JSON chat export
+
+---
+
+## 📚 Embeddings
+
+- Sentence Transformers
+- Persistent FAISS Index
+- Local embedding generation
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                     User
+                       │
+                       ▼
+              Streamlit Interface
+                       │
+          Upload Documents / Ask Query
+                       │
+                       ▼
+           Document Parsing Layer
+       (PDF | DOCX | TXT | CSV)
+                       │
+                       ▼
+               Chunking Engine
+        Recursive Chunking + Metadata
+                       │
+                       ▼
+            Embedding Generation
+     SentenceTransformer Embeddings
+                       │
+                       ▼
+                FAISS Vector Store
+                       │
+      ┌────────────────┴────────────────┐
+      ▼                                 ▼
+ Dense Semantic Search             BM25 Search
+      │                                 │
+      └──────────────┬──────────────────┘
+                     ▼
+         Reciprocal Rank Fusion
+                     ▼
+       Cross Encoder Re-ranking
+                     ▼
+          Top Relevant Chunks
+                     ▼
+            Prompt Construction
+                     ▼
+     OpenAI / Gemini / Ollama
+                     ▼
+       Citation-backed Response
+```
+
+---
+
+# 🔍 Retrieval Pipeline
+
+```text
+User Query
+     │
+     ▼
+Query Expansion
+     │
+     ▼
+Dense Retrieval (FAISS)
+     │
+     ▼
+Sparse Retrieval (BM25)
+     │
+     ▼
+Reciprocal Rank Fusion
+     │
+     ▼
+Cross Encoder Re-ranking
+     │
+     ▼
+Context Compression
+     │
+     ▼
+Prompt Builder
+     │
+     ▼
+LLM
+     │
+     ▼
+Answer + Citations
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+advanced-rag/
+
+│
+├── app.py
+├── config.py
+├── requirements.txt
+├── README.md
+│
+├── data/
+│   ├── uploads/
+│   ├── processed/
+│   └── embeddings/
+│
+├── ingestion/
+│   ├── pdf_loader.py
+│   ├── docx_loader.py
+│   ├── txt_loader.py
+│   ├── csv_loader.py
+│   └── parser.py
+│
+├── chunking/
+│
+├── embeddings/
+│
+├── retrieval/
+│   ├── dense.py
+│   ├── bm25.py
+│   ├── hybrid.py
+│   ├── query_expansion.py
+│   └── reranker.py
+│
+├── llm/
+│
+├── memory/
+│
+└── tests/
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/raj5715567/advanced-hybrid-rag-system.git
+
+cd advanced-hybrid-rag-system
+```
+
+---
+
+## Create Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+Windows
 
 ```powershell
-python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
+
+Linux/macOS
+
+```bash
+source .venv/bin/activate
+```
+
+---
+
+## Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Copy-Item .env.example .env
+```
+
+---
+
+## Configure Environment
+
+```bash
+cp .env.example .env
+```
+
+Add your API keys if needed.
+
+```env
+OPENAI_API_KEY=
+
+GEMINI_API_KEY=
+
+RAG_LLM_PROVIDER=gemini
+```
+
+---
+
+## Run
+
+```bash
 streamlit run app.py
 ```
 
-For Gemini, set `RAG_LLM_PROVIDER=gemini`, `RAG_GEMINI_MODEL=gemini-3.6-flash`, and `GEMINI_API_KEY` in `.env`. For local LLMs, install and run [Ollama](https://ollama.com/), then pull your chosen model, for example `ollama pull llama3.2`. OpenAI remains optional: set `RAG_LLM_PROVIDER=openai` and `OPENAI_API_KEY` only if you choose it.
+---
 
-Never paste API keys into source code, screenshots, or chat. If a key is exposed, revoke it immediately and replace it in your untracked `.env` file.
 
-## Embeddings
+---
 
-The default local model, `sentence-transformers/all-MiniLM-L6-v2`, downloads once when you build the index. The resulting FAISS vectors and source metadata are stored in `data/embeddings/`. The index is saved through Python byte-based I/O so it also works in Windows paths containing non-English characters. You can use a different compatible Sentence Transformer model by setting `RAG_EMBEDDING_MODEL` in `.env` before indexing.
 
-## Ask questions
+# 📸 Screenshots
 
-Choose **gemini** after setting `GEMINI_API_KEY` in your local `.env`, **ollama** for local answers after running `ollama pull llama3.2`, or **openai** after setting `OPENAI_API_KEY`. The application sends only retrieved chunks—not every uploaded document—to the selected LLM and displays those chunks as citations.
+## Home
 
-## Structure
+> Add Screenshot Here
 
-```text
-app.py          Streamlit interface
-config.py       Configuration and storage paths
-data/           Local uploads, processed documents, and indexes
-ingestion/      Document parsers (Phase 2)
-chunking/       Chunking logic (Phase 3)
-embeddings/     Embedding and FAISS code (Phase 4)
-retrieval/      Dense, BM25, hybrid, and reranking code (Phases 5–7)
-llm/            Provider integrations and prompts
-memory/         Conversation-memory code
-tests/          Automated tests
-```
+---
+
+## Document Upload
+
+> Add Screenshot Here
+
+---
+
+## Chat Interface
+
+> Add Screenshot Here
+
+---
+
+## Citation Display
+
+> Add Screenshot Here
+
+---
+
+# 🔬 Technologies Used
+
+| Category | Technology |
+|-----------|------------|
+| Frontend | Streamlit |
+| Language | Python |
+| Embeddings | Sentence Transformers |
+| Vector DB | FAISS |
+| Sparse Retrieval | BM25 |
+| Hybrid Retrieval | RRF |
+| Re-ranking | Cross Encoder |
+| LLM | OpenAI / Gemini / Ollama |
+
+---
+
+# 📈 Current Progress
+
+| Module | Status |
+|---------|--------|
+| Document Parsing | ✅ |
+| Chunking | ✅ |
+| Embeddings | ✅ |
+| FAISS | ✅ |
+| Dense Retrieval | ✅ |
+| BM25 | ✅ |
+| Hybrid Search | ✅ |
+| Reciprocal Rank Fusion | ✅ |
+| Cross Encoder | ✅ |
+| Conversation Memory | ✅ |
+| Streaming Responses | ✅ |
+| Source Citations | ✅ |
+| Chat Export | ✅ |
+
+---
+
+# 🚀 Future Enhancements
+
+- Parent-Child Retrieval
+- Query Rewriting using LLMs
+- Multi-Query Retrieval
+- Contextual Compression Retriever
+- GraphRAG
+- Agentic RAG
+- LangGraph Integration
+- Knowledge Base Management
+- Docker Deployment
+- FastAPI Backend
+- Authentication
+- Cloud Deployment
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+Feel free to fork the repository, open issues, or submit pull requests.
+
+---
+
+# 📜 License
+
+Licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+**Raj Kumar**
+
+GitHub
+
+https://github.com/raj5715567
